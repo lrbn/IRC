@@ -10,7 +10,9 @@ import java.awt.event.ActionListener;
  *
  * Visual representation of client
  *
- * @author Brandon Nguyen, lrbn@github.com, lrbn86@gmail.com
+ * @author Brandon Nguyen
+ *         Github @ lrbn
+ *         Email: lrbn86@gmail.com
  *
  * @version December 13, 2016
  *
