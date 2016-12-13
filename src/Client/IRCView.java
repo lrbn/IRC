@@ -2,6 +2,8 @@ package Client;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Client.IRCView.java
@@ -22,12 +24,16 @@ public class IRCView extends JFrame {
     private JLabel usernameLabel;
     private JTextField usernameField;
 
+    private JLabel usersLabel;
+    private JTextArea chatBox; // User sends messages
+    private JTextArea messagesBox; // User reads messages
+
     private JButton loginButton;
     private JButton sendMessageButton;
 
+    private JPanel mainPanel;
     private JPanel loginPanel;
     private JPanel chatPanel;
-    private JPanel mainPanel;
 
     public IRCView() {
 
