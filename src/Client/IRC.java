@@ -14,7 +14,7 @@ public class IRC {
 
     public static void main(String[] args) {
 
-
+        new IRCView();
 
     }
 
