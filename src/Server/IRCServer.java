@@ -1,15 +1,15 @@
+package Server;
+
 /**
- * IRCModel.java
+ * Server.IRCServer.java
  *
- * Data representation of client
+ * IRC Server
  *
  * @author Brandon Nguyen, lrbn@github.com, lrbn86@gmail.com
  *
  * @version December 13, 2016
  *
  */
-public class IRCModel {
-
-
+public class IRCServer {
 
 }

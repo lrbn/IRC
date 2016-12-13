@@ -1,14 +1,16 @@
+package Client;
+
 /**
- * IRCController.java
+ * Client.IRCView.java
  *
- * I/O & networking control
+ * Visual representation of client
  *
  * @author Brandon Nguyen, lrbn@github.com, lrbn86@gmail.com
  *
  * @version December 13, 2016
  *
  */
-public class IRCController {
+public class IRCView {
 
 
 

@@ -1,7 +1,9 @@
+package Client;
+
 /**
- * IRC.java
+ * Client.IRC.java
  *
- * A simple online chat program
+ * IRC Client
  *
  * @author Brandon Nguyen, lrbn@github.com, lrbn86@gmail.com
  *
