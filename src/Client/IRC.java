@@ -16,7 +16,10 @@ public class IRC {
 
     public static void main(String[] args) {
 
-        new IRCView();
+        IRCModel model = new IRCModel();
+        IRCView view = new IRCView();
+
+        new IRCController(model, view);
 
     }
 

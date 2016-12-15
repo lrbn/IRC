@@ -102,8 +102,13 @@ public class IRCView extends JFrame {
                 boolean isFieldsEmpty = (getUserNameFieldText.equals(emptyField)) || (getServerHostNameFieldText.equals(emptyField)) || (getServerPortNumberFieldText.equals(emptyField));
 
                 if (!isFieldsEmpty) {
-                    System.out.println("Fields are not empty.");
+                    System.out.println("All fields are filled. Storing data.");
                     // Check whether fields are valid
+
+                    // Store data into model
+
+
+
                 } else {
                     System.out.println("Fields cannot be empty.");
                 }
@@ -120,4 +125,43 @@ public class IRCView extends JFrame {
         return this.chatPanel;
     }
 
+    public JTextField getUsernameField() {
+        return usernameField;
+    }
+
+    public void setUsernameField(JTextField usernameField) {
+        this.usernameField = usernameField;
+    }
+
+    public JTextField getServerHostNameField() {
+        return serverHostNameField;
+    }
+
+    public void setServerHostNameField(JTextField serverHostNameField) {
+        this.serverHostNameField = serverHostNameField;
+    }
+
+    public JTextField getServerPortNumberField() {
+        return serverPortNumberField;
+    }
+
+    public void setServerPortNumberField(JTextField serverPortNumberField) {
+        this.serverPortNumberField = serverPortNumberField;
+    }
+
+    public JTextArea getChatBox() {
+        return chatBox;
+    }
+
+    public void setChatBox(JTextArea chatBox) {
+        this.chatBox = chatBox;
+    }
+
+    public JTextArea getMessagesBox() {
+        return messagesBox;
+    }
+
+    public void setMessagesBox(JTextArea messagesBox) {
+        this.messagesBox = messagesBox;
+    }
 }

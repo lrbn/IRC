@@ -1,5 +1,6 @@
 package Client;
 
+import java.io.IOException;
 import java.net.Socket;
 
 /**
@@ -16,11 +17,45 @@ import java.net.Socket;
  */
 public class IRCController {
 
+    private IRCModel model;
+    private IRCView view;
+
     private Socket clientSocket;
+    private String serverHostName;
+    private int serverPortNumber;
 
-    public void connectToServer() {
+    public IRCController(IRCModel model, IRCView view) {
 
-        clientSocket = new Socket();
+        this.model = model;
+        this.view = view;
+
+        connectToServer(model.getServerHostName(), model.getServerPortNumber());
+
+    }
+
+    public void connectToServer(String serverHostName, int serverPortNumber) {
+
+        this.serverHostName = serverHostName;
+        this.serverPortNumber = serverPortNumber;
+
+        try {
+
+            clientSocket = new Socket(serverHostName, serverPortNumber);
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public void storeDataToModel (IRCModel model, IRCView view) {
+
+        model.setUsername(view.getUsernameField().getText());
+        model.setServerHostName(view.getServerHostNameField().getText());
+        model.setServerPortNumber(Integer.parseInt(view.getServerPortNumberField().getText()));
 
     }
 
