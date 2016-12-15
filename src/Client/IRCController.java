@@ -1,5 +1,7 @@
 package Client;
 
+import java.net.Socket;
+
 /**
  * Client.IRCController.java
  *
@@ -14,6 +16,12 @@ package Client;
  */
 public class IRCController {
 
+    private Socket clientSocket;
 
+    public void connectToServer() {
+
+        clientSocket = new Socket();
+
+    }
 
 }
