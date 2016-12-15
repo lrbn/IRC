@@ -1,6 +1,7 @@
 package Client;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,13 +25,18 @@ public class IRCView extends JFrame {
     public static final int HEIGHT = 480;
 
     private JLabel usernameLabel;
+    private JLabel serverHostNameLabel;
+    private JLabel serverPortNumberLabel;
+
     private JTextField usernameField;
+    private JTextField serverHostNameField;
+    private JTextField serverPortNumberField;
 
     private JLabel usersLabel;
     private JTextArea chatBox; // User sends messages
     private JTextArea messagesBox; // User reads messages
 
-    private JButton loginButton;
+    private JButton joinServerButton;
     private JButton sendMessageButton;
 
     private JPanel mainPanel;
@@ -51,8 +57,9 @@ public class IRCView extends JFrame {
 
     public JPanel setupGUI() {
 
-        mainPanel = new JPanel();
-        mainPanel.add(setupLoginPanel());
+        mainPanel = new JPanel(new BorderLayout());
+        mainPanel.setBorder(BorderFactory.createEtchedBorder());
+        mainPanel.add(setupLoginPanel(), BorderLayout.SOUTH);
         mainPanel.add(setupChatPanel());
 
         return this.mainPanel;
@@ -61,13 +68,27 @@ public class IRCView extends JFrame {
     public JPanel setupLoginPanel() {
 
         loginPanel = new JPanel();
+        loginPanel.setBorder(BorderFactory.createEtchedBorder());
+        loginPanel.setLayout(new GridLayout(4, 3));
+
         usernameLabel = new JLabel("Username: ");
         usernameField = new JTextField(8);
-        loginButton = new JButton("Login");
+        serverHostNameLabel = new JLabel ("Server Host Name: ");
+        serverHostNameField = new JTextField(8);
+        serverPortNumberLabel = new JLabel("Server Port Number: ");
+        serverPortNumberField = new JTextField(8);
+        joinServerButton = new JButton("Join Server");
 
         loginPanel.add(usernameLabel);
         loginPanel.add(usernameField);
-        loginPanel.add(loginButton);
+
+        loginPanel.add(serverHostNameLabel);
+        loginPanel.add(serverHostNameField);
+
+        loginPanel.add(serverPortNumberLabel);
+        loginPanel.add(serverPortNumberField);
+
+        loginPanel.add(joinServerButton);
 
         return this.loginPanel;
     }
