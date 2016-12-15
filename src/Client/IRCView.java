@@ -27,6 +27,7 @@ public class IRCView extends JFrame {
     private JLabel usernameLabel;
     private JLabel serverHostNameLabel;
     private JLabel serverPortNumberLabel;
+    private JLabel serverMessageLabel;
 
     private JTextField usernameField;
     private JTextField serverHostNameField;
@@ -89,6 +90,25 @@ public class IRCView extends JFrame {
         loginPanel.add(serverPortNumberField);
 
         loginPanel.add(joinServerButton);
+
+        joinServerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String emptyField = "";
+                String getUserNameFieldText = usernameField.getText();
+                String getServerHostNameFieldText = serverHostNameField.getText();
+                String getServerPortNumberFieldText = serverPortNumberField.getText();
+                boolean isFieldsEmpty = (getUserNameFieldText.equals(emptyField)) || (getServerHostNameFieldText.equals(emptyField)) || (getServerPortNumberFieldText.equals(emptyField));
+
+                if (!isFieldsEmpty) {
+                    System.out.println("Fields are not empty.");
+                    // Check whether fields are valid
+                } else {
+                    System.out.println("Fields cannot be empty.");
+                }
+            }
+        });
 
         return this.loginPanel;
     }
